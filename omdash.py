@@ -12,8 +12,8 @@ today = date.today()
 
 st.title('Outcome Measures Report')
 cols_used = [3,6,34,35, 59, 60, 61, 62, 63, 73, 79, 87, 95, 113]
-# data = pd.read_csv(uploaded_file, usecols=cols_used, names=['URN', 'Date', 'Anxiety', 'Depression', 'PTSD', 'Intrusions', 'Avoidance', 'PTSD cognitions','Arousal', 'Insomnia', 'Alcohol', 'Anger', 'Function', 'Physical'], skiprows=0)
-data = pd.read_csv("data.csv", usecols=cols_used, names=['URN', 'Date', 'Anxiety', 'Depression', 'PTSD', 'Intrusions', 'Avoidance', 'PTSD cognitions','Arousal', 'Insomnia', 'Alcohol', 'Anger', 'Function', 'Physical'], skiprows=0)
+# data = pd.read_csv(uploaded_file, usecols=cols_used, names=['URN', 'Date', 'Anxiety', 'Depression', 'PTSD', 'Intrusions', 'Avoidance', 'PTSD cognitions','Arousal', 'Insomnia', 'Alcohol', 'Anger', 'Function', 'Physical'], skiprows=1)
+data = pd.read_csv("data.csv", usecols=cols_used, names=['URN', 'Date', 'Anxiety', 'Depression', 'PTSD', 'Intrusions', 'Avoidance', 'PTSD cognitions','Arousal', 'Insomnia', 'Alcohol', 'Anger', 'Function', 'Physical'], skiprows=1)
 # st.write(data)
 
 # Patient Selector
