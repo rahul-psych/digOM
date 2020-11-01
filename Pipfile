@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 streamlit = "*"
 plotly = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.8"
