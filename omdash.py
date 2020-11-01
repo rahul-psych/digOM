@@ -34,42 +34,51 @@ st.write('### Report generated on: ' + str(today) + ' for URN: ' + str(option))
 
 st.write(ptdata)
 
-scfig = px.bar(
+st.write(ptdata['Date'])
+
+pclfig = px.bar(
     ptdata,
     x=ptdata['Date'],
     y='PTSD',
     range_y=[0,80]
 )
-scfig.update_layout(
-    title=({
-        'text': 'PCL',
-        'xanchor': 'center',
-        'yanchor': 'top',}),
-    xaxis_title="Date",
-    plot_bgcolor="#eceff1"
-)
-
-hadsfig = px.line(
+hadsfig = px.scatter_matrix(
     ptdata,
-    x=ptdata['Date'],
-    y=['Anxiety', 'Depression'],
-    range_y=[0,21]
-)
-hadsfig.update_layout(
-    title=({
-        'text': 'HADS',
-        'xanchor': 'center',
-        'yanchor': 'top',}),
-    xaxis_title="Date",
-    plot_bgcolor="#eceff1"
+    dimensions=['Anxiety','Depression'],
+    color=['Date']
 )
 
-st.plotly_chart(scfig)
+
+# scfig.update_layout(
+#     title=({
+#         'text': 'PCL',
+#         'xanchor': 'center',
+#         'yanchor': 'top',}),
+#     xaxis_title="Date",
+#     plot_bgcolor="#eceff1"
+# )
+
+# hadsfig = px.line(
+#     ptdata,
+#     x=ptdata['Date'],
+#     y=['Anxiety', 'Depression'],
+#     range_y=[0,21]
+# )
+# hadsfig.update_layout(
+#     title=({
+#         'text': 'HADS',
+#         'xanchor': 'center',
+#         'yanchor': 'top',}),
+#     xaxis_title="Date",
+#     plot_bgcolor="#eceff1"
+# )
+
+st.plotly_chart(pclfig)
 st.plotly_chart(hadsfig)
 
-pclfig = px.imshow(
-    ptdata['Intrusions','Avoidance','PTSD Cognitions','Arousal'],
-    y=ptdata['Date'], x=['Intrusions','Avoidance','PTSD Cognitions','Arousal'],
-    title='PTSD Symptoms'
-)
+# pclfig = px.imshow(
+#     ptdata['Intrusions','Avoidance','PTSD Cognitions','Arousal'],
+#     y=ptdata['Date'], x=['Intrusions','Avoidance','PTSD Cognitions','Arousal'],
+#     title='PTSD Symptoms'
+# )
 
